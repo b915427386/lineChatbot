@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /home/ec2-user/deploy
+cd /home/ec2-user/lineChatbot
 echo "Running service container "
 version=`cat VERSION|cut -d ';' -f 1`
 docker-compose -f $version/docker-compose.yml up -d
