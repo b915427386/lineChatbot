@@ -1,6 +1,7 @@
 #!/bin/bash
 cd /home/ec2-user/deploy
 echo "Running service container "
+version=`cat VERSION|cut -d ';' -f 1`
 docker-compose -f $version/docker-compose.yml up -d
 echo "Testing service container "
 touch /home/ec2-user/.container_log
@@ -36,4 +37,4 @@ do
     echo "service deploy fail QQ" > /home/ec2-user/lineChatbot/updateTime
   fi
 done
-date > /home/ec2-user/deploy/updateTime
+date >> /home/ec2-user/lineChatbot/updateTime
